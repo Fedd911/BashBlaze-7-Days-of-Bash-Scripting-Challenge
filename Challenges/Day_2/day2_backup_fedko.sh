@@ -60,7 +60,7 @@ function createBackup {
         mkdir "$inputDir"/backup_"$timestamp"
 
         #Copying everything from the tempdir and putting it into the backup dir
-        cp -R "$TEMPDIR"/. backup_"$timestamp"
+        cp -R "$TEMPDIR"/. "$inputDir"/backup_"$timestamp"
 
         #Using the script twice in the same DIR causes nested copies.
         #Deleting any nested copies.
@@ -71,7 +71,7 @@ function createBackup {
 
 #Checks to see if there are more than 3 backups present. If true the oldest one is deleted. 
 function rotation {
-        backupsCount=$(ls -d backup_* | wc -l)
+        backupsCount=$(ls -d "$inputDir"/backup_* | wc -l)
 
         if [[ "$backupsCount" -gt 3 ]]; then
                 rm -fr "$inputDir"/"$(ls -rd backup_* | tail -n 1)"
