@@ -1,0 +1,33 @@
+#Vagrant file for the config of the VMs
+
+Vagrant.configure("2") do |config|
+
+    config.vm.define "server" do |server|
+      server.vm.box = "geerlingguy/centos7"
+      server.vm.network "private_network", ip: "192.168.10.12"
+          server.vm.hostname = "server"
+      server.vm.provider "virtualbox" do |vb|
+       vb.memory = "1024"
+     end
+    end
+  
+    config.vm.define "client1" do |client1|
+      client1.vm.box = "geerlingguy/centos7"
+      client1.vm.network "private_network", ip: "192.168.10.13"
+          client1.vm.hostname = "client1"
+    end
+    
+    config.vm.define "client2" do |client2|
+      client2.vm.box = "geerlingguy/centos7"
+      client2.vm.network "private_network", ip: "192.168.10.14"
+          client2.vm.hostname = "client2"
+    end
+    
+  #Provisioning the IPs of each server into the /etc/hosts dir.
+    config.vm.provision "shell", inline: <<-SHELL
+      echo "192.168.10.12 server" >> /etc/hosts
+      echo "192.168.10.13 client1" >> /etc/hosts
+      echo "192.168.10.14 client2" >> /etc/hosts
+      SHELL
+  end
+  
