@@ -1,15 +1,5 @@
 # Bash Blaze Day 7 Challenge: Mastering Remote Server Management and Web App Deployment
 
-## Teaser: The Remote Server Riddle
-
-In the bustling city of Bashland, a tech-savvy company called CodeCrafters Inc. faces a peculiar challenge. Their three computer servers, Alpha, Beta, and Gamma, are scattered across different locations. The servers hold crucial data and must communicate securely and efficiently.
-
-To tackle this conundrum, the IT team at CodeCrafters Inc. decides to embark on a thrilling quest! They create a virtual network of these servers, connecting them via SSH. The team also generates secret keys, hoping to forge a passwordless path to the servers.
-
-But there's more to this adventure! As part of their grand finale, the CodeCrafters team intends to deploy a magnificent web application that showcases their prowess in the world of technology. This web application, powered by Docker and Nginx, will be spread across the `client1` and `client2` servers, and the `server` will be the mastermind orchestrating the entire operation.
-
-Can you help the CodeCrafters team navigate this advanced challenge of remote server management and web application deployment? Join the Bash Blaze challenge's final day and unleash your Bash scripting prowess to master the art of secure remote communication, file transfers, and the remarkable world of Docker and Nginx! Are you up for the ultimate challenge? Let the Bashland journey begin!
-
 ## Challenge Objectives
 
 1. Set up a network of three virtual machines: `server`, `client1`, and `client2`.
